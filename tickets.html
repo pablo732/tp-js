@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="tickets.css">
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script
+            src="tickets.js"></script>
+    </head>
+    <body>
+        <header>
+            <!-- Navbar -->
+            <nav
+                class="navbar navbar-expand-lg navbar-dark bg-dark text-white
+                justify-content-between">
+                <a class="navbar-brand ml-5" href="#">
+                    Conf de Bs As</a>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav justify-content-center ml-auto mr-5">
+                        <a class="nav-item nav-link active" href="#">La
+                            conferencia<span
+                                class="sr-only"></span></a>
+                        <a class="nav-item nav-link" href="#">Los oradores</a>
+                        <a class="nav-item nav-link" href="#">El lugar y la
+                            fecha</a>
+                        <a class="nav-item nav-link disabled" href="#">Conviértete
+                            en orador</a>
+                        <a class="nav-item nav-link text-success" href="#">Comprar
+                            tickets</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Cards -->
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <div class="card-columns d-flex justify-content-center
+                        mt-4">
+                        <div class="card border-primary">
+                            <div class="card-body text-center ">
+                                <h5 class="card-title ">Estudiante</h5>
+                                <h6 class="card-subtitle mb-2 ">Tienen un
+                                    descuento</h6>
+                                <p class="card-text h4">80%</p>
+                                <a class="">* presentar documentación</a>
+                            </div>
+                        </div>
+                        <div class="card border-success">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Trainee</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Tienen
+                                    un
+                                    descuento</h6>
+                                <p class="card-text h4">50%</p>
+                                <a class="card-text">* presentar documentación</a>
+                            </div>
+                        </div>
+                        <div class="card border-warning">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Junior</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Tienen
+                                    un
+                                    descuento</h6>
+                                <p class="card-text h4">15%</p>
+                                <a class="card-text">* presentar documentación</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+            <div class="text-center ">
+                VENTA
+                <h2>VALOR DE TICKET $200</h2>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <form class="text mt-4 ">
+                        <div class="form-row mt-2">
+                            <div class="col">
+                                <input type="text" class="form-control"
+                                    placeholder="Nombre" id="nombre" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control"
+                                    placeholder="Apellido" id="apellido"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control"
+                                placeholder="Correo" id="correo" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCantidad" required>Cantidad</label>
+                                <input type="text" class="form-control"
+                                    placeholder="Cantidad" id="cantidad"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputCategoria">Categoria</label>
+                                <select id="categoria"
+                                    class="form-control" required>
+                                    <option value="Estudiante" selected>Estudiante</option>
+                                    <option value="Trainee">Trainee</option>
+                                    <option value="Junior">Junior</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="alert alert-primary" role="alert">
+                            Total a pagar: $ <span id="totalAPagar"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-6">
+                                <button id="btnBorrar" type="button" class="btn
+                                    btn-success btn-block"
+                                    onclick="borrarFormulario()">Borrar</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="btnResumen" type="button" class="btn
+                                    btn-success btn-block"
+                                    onclick="submitResumen()">Resumen</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="col-2">
+                </div>
+            </div>
+
+            <div class="footer text-center text-white bg-dark">
+                <section>
+                    <div class="row align-items-center d-inline-flex
+                        justify-content-center p-4">
+                        <div class="col gx-5">
+                            <a href="#!" class="text-white
+                                text-decoration-none">Preguntas
+                                frecuentes</a>
+                        </div>
+                        <div class="col gx-5">
+                            <a href="#!" class="text-white
+                                text-decoration-none">Contáctanos</a>
+                        </div>
+                        <div class="col gx-5">
+                            <a href="#!" class="text-white
+                                text-decoration-none">Prensa</a>
+                        </div>
+                        <div class="col gx-5">
+                            <a href="#!" class="text-white
+                                text-decoration-none">Conferencias</a>
+                        </div>
+                        <div class="col gx-5">
+                            <a href="#!" class="text-white
+                                text-decoration-none">Términos
+                                y condiciones</a>
+                        </div>
+                        <div class="col gx-5">
+                            <a href="#!" class="text-white
+                                text-decoration-none">Privacidad</a>
+                        </div>
+                        <div class="col">
+                            <a href="#!" class="text-white
+                                text-decoration-none">Estudiantes</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </header>
+    </body>
+</html>
